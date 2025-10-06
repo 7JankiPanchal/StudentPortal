@@ -1,0 +1,98 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard - Student Portal</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+  .dashboard {
+    padding: 40px;
+    background: #f9f9f9;
+    text-align: center;
+  }
+  .dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+  }
+  .card {
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 10px 10px 12px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .card:hover {
+  transform: translateY(-10px) scale(1.03);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+  }
+  .card h3 {
+    margin-bottom: 10px;
+  }
+  .card .btn {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 8px 16px;
+    background-color: #004080;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+  }
+  .card .btn:hover {
+    background-color: #002f66;
+  }
+</style>
+
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <h1>Student Portal</h1>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="courses.html">Courses</a></li>
+        <li><a href="events.html">Events</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="dashboard.html" class="active">Dashboard</a></li>
+        <li><a href="profile.html">Profile</a></li>
+        <li><a href="logout.html">Logout</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="dashboard">
+    <h2>Welcome Back, Student!</h2>
+    <div class="dashboard-grid">
+      <div class="card">
+        <h3>My Courses</h3>
+        <p>View your enrolled courses and progress.</p>
+        <a href="courses.html" class="btn">View Courses</a>
+      </div>
+      <div class="card">
+        <h3>My Quizzes</h3>
+        <p>Take quizzes and track your performance.</p>
+        <a href="quizzes.html" class="btn">Go to Quizzes</a>
+      </div>
+      <div class="card">
+        <h3>Ask Questions</h3>
+        <p>Submit your doubts to teachers.</p>
+        <a href="questions.html" class="btn">Ask Now</a>
+      </div>
+      <div class="card">
+        <h3>Upcoming Events</h3>
+        <p>Check what’s coming next.</p>
+        <a href="events.html" class="btn">See Events</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Student Portal. All rights reserved.</p>
+  </footer>
+</body>
+</html>
+

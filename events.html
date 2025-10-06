@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Events - Student Portal</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+  .events {
+    padding: 40px;
+    background: #f0f4f8;
+    text-align: center;
+  }
+  .events-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+  }
+  .card {
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 10px 10px 12px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .card:hover {
+  transform: translateY(-10px) scale(1.03);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+  }
+  .card h3 {
+    margin-bottom: 10px;
+  }
+</style>
+
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <h1>Student Portal</h1>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="courses.html">Courses</a></li>
+        <li><a href="events.html" class="active">Events</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="dashboard.html">Dashboard</a></li>
+        <li><a href="profile.html">Profile</a></li>
+        <li><a href="logout.html">Logout</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="events">
+    <h2>Upcoming Events</h2>
+    <div class="events-grid">
+      <div class="card">
+        <h3>Orientation Program</h3>
+        <p>Get started with our platform - August 5, 2025</p>
+      </div>
+      <div class="card">
+        <h3>Live Coding Bootcamp</h3>
+        <p>Hands-on session on full stack development - August 10, 2025</p>
+      </div>
+      <div class="card">
+        <h3>Design Hackathon</h3>
+        <p>Compete in UI/UX design challenges - August 20, 2025</p>
+      </div>
+      <div class="card">
+        <h3>Career Guidance Webinar</h3>
+        <p>Plan your path with industry experts - August 25, 2025</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Student Portal. All rights reserved.</p>
+  </footer>
+</body>
+</html>

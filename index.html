@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Student Portal</title>
+  <link rel="stylesheet" href="./styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <h1>Student Portal</h1>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="courses.html">Courses</a></li>
+        <li><a href="events.html">Events</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="login.html">Login</a></li>
+  <li><a href="register.html">Register</a></li>
+        <button onclick="document.body.classList.toggle('dark')">🌙</button>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h2>Learn Anywhere, Anytime</h2>
+    <p>Buy courses, track progress, and get answers from your teachers.</p>
+    <a href="courses.html" class="btn">Browse Courses</a>
+  </section>
+
+  <section class="features">
+    <div class="box">
+      <i class="fas fa-chart-line fa-2x"></i>
+      <h3>Track Progress</h3>
+      <p>Monitor your course completion and quiz scores.</p>
+    </div>
+    <div class="box">
+      <i class="fa-solid fa-question fa-2x"></i>
+      <h3>Ask Questions</h3>
+      <p>Interact with teachers and get answers to your doubts.</p>
+    </div>
+    <div class="box">
+      <i class="fa-brands fa-youtube fa-2x"></i>
+      <h3>Watch Videos</h3>
+      <p>Learn with our interactive and recorded video lessons.</p>
+    </div>
+    <div class="box">
+      <i class="fa-solid fa-award fa-2x"></i>
+      <h3>Participate in Quizzes</h3>
+      <p>Test your knowledge and improve your learning.</p>
+    </div>
+  </section>
+
+  <!-- Containers to display data -->
+  <h2>Students</h2>
+  <div id="studentList"></div>
+
+  <h2>Events</h2>
+  <div id="eventList"></div>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Student Portal. All rights reserved.</p>
+    <ul class="footer-links">
+      <li><a href="about.html">About</a></li>
+      <li><a href="profile.html">Profile</a></li>
+      <li><a href="dashboard.html">Dashboard</a></li>
+      <li><a href="admin.html">Admin Panel</a></li>
+    </ul>
+  </footer>
+
+  <!-- JSON + JavaScript in one file -->
+  <script>
+    // Sample JSON data inside the script
+    const data = {
+      "students": [
+        { "id": "S001", "name": "Janki Panchal", "branch": "Computer Science" },
+        { "id": "S002", "name": "Rahul Sharma", "branch": "IT" },
+        { "id": "S003", "name": "Priya Mehta", "branch": "Electronics" }
+      ],
+      "events": [
+        { "title": "Tech Fest", "date": "2025-08-20" },
+        { "title": "Workshop on AI", "date": "2025-09-05" }
+      ]
+    };
+
+    // Display Students
+    let studentContainer = document.getElementById('studentList');
+    data.students.forEach(student => {
+      let div = document.createElement('div');
+      div.className = 'card';
+      div.innerHTML = `<strong>${student.name}</strong> (${student.id}) - ${student.branch}`;
+      studentContainer.appendChild(div);
+    });
+
+    // Display Events
+    let eventContainer = document.getElementById('eventList');
+    data.events.forEach(event => {
+      let div = document.createElement('div');
+      div.className = 'card';
+      div.innerHTML = `<strong>${event.title}</strong> - ${event.date}`;
+      eventContainer.appendChild(div);
+    });
+  </script>
+</body>
+</html>

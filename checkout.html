@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Checkout - UPI Payment</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <div class="checkout-box">
+    <h2>UPI Payment</h2>
+    <form id="upiForm">
+      <label class="upi-option">
+        <input type="radio" name="upi" value="gpay" required />
+        Google Pay (GPay)
+      </label>
+      <label class="upi-option">
+        <input type="radio" name="upi" value="phonepe" />
+        PhonePe
+      </label>
+      <label class="upi-option">
+        <input type="radio" name="upi" value="paytm" />
+        Paytm UPI
+      </label>
+      <label class="upi-option">
+        <input type="radio" name="upi" value="manual" />
+        Enter UPI ID
+      </label>
+
+      <div class="upi-id-input">
+        <label for="manualUpi">Your UPI ID</label>
+        <input type="text" id="manualUpi" placeholder="yourname@upi" disabled />
+      </div>
+
+      <button class="btn" id="btn11" type="submit"><a href="purchase-success.html">Pay Now</a></button>
+    </form>
+  </div>
+
+  <script>
+    const manualInput = document.getElementById("manualUpi");
+    const radioButtons = document.querySelectorAll('input[name="upi"]');
+
+    radioButtons.forEach((btn) => {
+      btn.addEventListener("change", () => {
+        if (btn.value === "manual") {
+          manualInput.disabled = false;
+          manualInput.required = true;
+        } else {
+          manualInput.disabled = true;
+          manualInput.required = false;
+        }
+      });
+    });
+
+    document.getElementById("upiForm").addEventListener("submit", function (e) {
+      e.preventDefault();
+      alert("✅ UPI Payment Successful!");
+      window.location.href = "purchase-success.html";
+    });
+  </script>
+
+</body>
+</html>

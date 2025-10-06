@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login - Student Portal</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+  .form-section {
+    padding: 40px;
+    background: #fff;
+    max-width: 500px;
+    margin: 40px auto;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  }
+  .form-box {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  .form-box input[type="email"],
+  .form-box input[type="password"] {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+  }
+  .form-box button {
+    background-color: #004080;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  .form-box button:hover {
+    background-color: #002f66;
+  }
+</style>
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <h1>Student Portal</h1>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="courses.html">Courses</a></li>
+        <li><a href="events.html">Events</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="login.html" class="active">Login</a></li>
+  <li><a href="register.html">Register</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="form-section" >
+    <h2>Login to Your Account</h2>
+    <form action="login.php" method="post" class="form-box" onsubmit="return validate(this)">
+      <label>Username:</label>
+      <input type="text" id="username" name="username" required />
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required />
+
+      <label for="password" name="password">Password:</label>
+      <input type="password" id="password" name="password" required />
+
+      <button type="submit" class="btn">Login</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Student Portal. All rights reserved.</p>
+  </footer>
+  <script>
+  function validate(form) {
+    var userName = document.getElementById("email").value.trim();
+    var password = document.getElementById("password").value;
+
+    var FirstCharStr1 = /^@[A-Za-z]/;
+    var FirstCharStr2 = /^_[A-Za-z]/;
+    var FirstCharStr3 = /^[0-9]/;
+
+    if (userName.length === 0) {
+      alert("You must enter a username.");
+      return false;
+    }
+
+    if (password.length === 0) {
+      alert("You must enter a password.");
+      return false;
+    }
+
+    if (password.length < 6 || password.length > 12) {
+      alert("Length of Password must be between 6 to 12 characters.");
+      return false;
+    }
+
+    if (FirstCharStr1.test(userName)) {
+      alert("Username should not start with '@'.");
+      return false;
+    }
+
+    if (FirstCharStr2.test(userName)) {
+      alert("Username should not start with '_'.");
+      return false;
+    }
+    return true;
+  }
+</script>
+
+</body>
+</html>
+
+

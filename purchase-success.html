@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Purchase Successful</title>
+  <style>
+    body {
+      background-color: #004080;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      color: white;
+      padding-top: 100px;
+    }
+    .success-box {
+      background: rgba(0, 0, 0, 0.3);
+      padding: 50px;
+      border-radius: 20px;
+      display: inline-block;
+    }
+    .btn {
+      margin-top: 30px;
+      padding: 10px 20px;
+      font-size: 18px;
+      background-color: #fff;
+      color: black;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="success-box">
+    <h1>🎉 Purchase Successful!</h1>
+    <p>Thank you for buying the course.</p>
+    <p>You now have full access to the content.</p>
+    <a href="my-courses.html" class="btn">Go to My Courses</a>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+  <script>
+    window.onload = function () {
+      confetti({
+        particleCount: 200,
+        spread: 100,
+        startVelocity: 40,
+        origin: { y: 0.6 },
+        colors: ['#004080', '#00bfff', '#ffffff']
+      });
+    };
+  </script>
+</body>
+</html>
+-- Query to display all bookings with guest details
+SELECT 
+    b.booking_id,
+    g.name AS guest_name,
+    g.contact AS guest_contact,
+    b.room_type,
+    b.check_in,
+    b.status  
+FROM Bookings b
+JOIN Guests g ON b.guest_id = g.guest_id; 
+-- Updating the booking status to "Cancelled" for booking_id = 1
+UPDATE Bookings
+SET status = 'Cancelled'
+WHERE booking_id = 1;
+ 

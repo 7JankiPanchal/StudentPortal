@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FAQ - Student Portal</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+  .faq {
+    padding: 40px;
+    background: #ffffff;
+    text-align: center;
+  }
+  .faq-item p {
+  display: none;
+  transition: all 0.3s ease;
+  margin-top: 10px;
+  font-size: 1.2rem;
+}
+  .faq-list {
+    max-width: 800px;
+    margin: auto;
+    text-align: left;
+  }
+  .faq-item {
+    margin-bottom: 20px;
+    padding: 20px;
+    border-bottom: 1px solid #ccc;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+    border-radius: 1rem;
+    padding-bottom: 3rem;
+  }
+  .faq-item h3 {
+    margin-bottom: 10px;
+    color: #004080;
+    font-size: 1.4rem;
+  }
+  .faq-item:hover{
+  transform: translateY(-10px) scale(1.03);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+  }
+</style>
+
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <h1>Student Portal</h1>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="courses.html">Courses</a></li>
+        <li><a href="events.html">Events</a></li>
+        <li><a href="faq.html" class="active">FAQ</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="dashboard.html">Dashboard</a></li>
+        <li><a href="profile.html">Profile</a></li>
+        <li><a href="logout.html">Logout</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="faq">
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-list">
+      <div class="faq-item">
+        <h3>How do I enroll in a course?</h3>
+        <p>You can enroll by visiting the Courses page and clicking on the "Buy Course" button for the desired course.</p>
+      </div>
+      <div class="faq-item">
+        <h3>How can I track my progress?</h3>
+        <p>Your progress can be monitored in your Dashboard under the "My Courses" section.</p>
+      </div>
+      <div class="faq-item">
+        <h3>How do I ask a question to my teacher?</h3>
+        <p>Visit the Questions page and submit your query. Your teacher will respond as soon as possible.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Can I attend live events or webinars?</h3>
+        <p>Yes, check the Events page for upcoming webinars and events. You can register there.</p>
+      </div>
+    </div>
+  </section>
+  <footer>
+    <p>&copy; 2025 Student Portal. All rights reserved.</p>
+  </footer>
+  <script>
+  // Select all FAQ items
+  const faqItems = document.querySelectorAll(".faq-item");
+
+  faqItems.forEach(item => {
+    const question = item.querySelector("h3");
+    const answer = item.querySelector("p");
+    answer.style.display = "none";
+    question.addEventListener("click", () => {
+      if (answer.style.display === "none") {
+        answer.style.display = "block";
+      } else {
+        answer.style.display = "none";
+      }
+    });
+  });
+</script>
+
+</body>
+</html>

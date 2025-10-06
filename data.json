@@ -1,0 +1,10 @@
+{
+    "students": [
+        { "id": "23DCE101", "name": "Aarav Patel", "branch": "Computer" },
+        { "id": "23DCE102", "name": "Meera Shah", "branch": "IT" }
+    ],
+    "events": [
+        { "title": "Tech Talk", "date": "2025-08-10" },
+        { "title": "Hackathon", "date": "2025-08-20" }
+    ]
+}

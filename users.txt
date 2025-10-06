@@ -1,0 +1,4 @@
+Username: janki | Email: janki@gmail.com | Password: 123456
+Username: raj | Email: raj@gmail.com | Password: 654321
+Username: neha | Email: neha@yahoo.com | Password: 111111
+Username: amit | Email: amit@outlook.com | Password: 222222
